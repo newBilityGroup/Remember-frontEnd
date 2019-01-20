@@ -73,8 +73,21 @@ p {
 }
 
 /* ---------- LOGIN ---------- */
+#backIcon{
+	position: relative;
+	top:-120px;
+	left:105px;
+}
+#backIcon img{
+	cursor: pointer;
+	transition: all 0.8s;
+}
+#backIcon img:hover{
+	transform:translateY(20px);
+}
+
 #login {
-  width: 280px;
+  width: 300px;
 }
 
 #login form span {
@@ -116,7 +129,7 @@ p {
 
 #login form input[type="submit"]:hover {
 	background-color: #188f97;
-	transition:background-color .5s linear
+	transition:background-color .7s linear
 }
 
 #login > p {
@@ -143,7 +156,7 @@ p {
 
 /*Time to finalise the cloud shape*/
 .cloud {
-	width: 200px; height: 60px;
+	width: 200px; height: 66px;
 	background: #fff;
 	
 	border-radius: 200px;

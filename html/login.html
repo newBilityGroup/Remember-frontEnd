@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>登录</title>
   <link rel="stylesheet" href="../assets/css/login.css">
+  <link rel="shortcut icon" href="../assets/images/favicon.ico">
 </head>
 
 <body>
@@ -18,6 +19,9 @@
   </div>
 
   <div class="container">
+    <div id="backIcon">
+        <a href="index.html"><img src="../assets/images/back01.png" title="返回主页"></a>
+    </div>
     <div id="login">
       <form id="loginForm">
         <fieldset class="clearfix">
@@ -36,7 +40,7 @@
   <script>
     var data = Mock.mock("/login", "post", {
       'list|1': [{
-        'status': 200,
+        'status': 200
       }]
     })
     $("#loginForm").submit(function(){
