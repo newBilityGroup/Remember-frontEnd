@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/main.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../assets/css/uikit.min.css">
+    <title>主页</title>
+</head>
+
+<body>
+    <!--Header start -->
+    <header>
+        <!--menu start-->
+        <nav class="uk-navbar">
+            <a class="uk-navbar-brand uk-hidden-small" href="index.html">Re<span class="red">me</span>mber</a>
+            <ul class="uk-navbar-nav uk-hidden-small">
+                <li class="uk-active">
+                    <a href="#">班级通知</a>
+                </li>
+                <li>
+                    <a href="#">班级活动</a>
+                </li>
+                <li>
+                    <a href="#">班级文件</a>
+                </li>
+                <li>
+                    <a href="#">好友生日</a>
+                </li>
+                <li>
+                    <a href="#">大家の黑照</a>
+                </li>
+                <li>
+                    <a href="#">我们の小目标</a>
+                </li>
+                <li>
+                    <a href="#">漂流瓶</a>
+                </li>
+                <li>
+                    <a href="login.html">登录</a>
+                </li>
+                <li>
+                    <a href="#">我的</a>
+                </li>
+            </ul>
+            <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+            <div class="uk-navbar-brand uk-navbar-center uk-visible-small">Re<span class="red">me</span>mber</div>
+        </nav>
+
+        <!--menu end-->
+        <!--banner start-->
+        <div class="banner row" id="banner">
+            <div class="bannerText">
+                <h1>Re<span class="red">me</span>mber</h1>
+                <h2>班级墙</h2>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noPadd slides-container" style="height:100%">
+                <!--background slide show start-->
+                <div class="slide">
+                    <img src="../assets/images/background.jpg" alt="background"> </div>
+                    <img src="../assets/images/banner.jpg" alt="banner">
+                    <img src="../assets/images/banner1.jpg" alt="banner">
+            </div>
+            <!--background slide show end-->
+        </div>
+
+        <!--banner end-->
+    </header>
+    <!--Header end -->
+    <!--jquary min js-->
+    <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+    <!-- uikit min js -->
+    <script type="text/javascript" src="../assets/js/uikit.min.js"></script>
+    <!-- mock.js -->
+    <script type="text/javascript" src="../assets/js/mock-min.js"></script>
+    <!--for header jquery-->
+    <script type="text/javascript" src="../assets/js/jquery.superslides.js" charset="utf-8"></script>
+    <script>
+        $('#banner').superslides({
+            animation: 'fade',
+            play: 5000
+        });
+    </script>
+</body>
+
+</html>

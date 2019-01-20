@@ -1,0 +1,99 @@
+/*----------------------------------------------------
+	1. CSS Reset
+------------------------------------------------------*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-rendering: optimizelegibility;
+}
+
+body {
+    color: #888089;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    position: relative;
+    background: #000;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    outline: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.red{
+    color:red;
+}
+/*----------------------------------------------------
+	2. Header part
+------------------------------------------------------*/
+header {
+    position: relative;
+}
+
+.banner {
+    overflow: hidden;
+    margin: 0 auto !important;
+    background: #CACACA;
+}
+
+.patternOverlay {
+    background: #372d38;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+}
+
+.bannerText {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    text-align: center;
+    margin-top: -35px;
+    padding: 0;
+    z-index: 999;
+}
+
+.bannerText h1 {
+    text-transform: uppercase;
+    line-height: normal;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: 4px;
+}
+
+.bannerText h2 {
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+    line-height: normal;
+    font-weight: 400;
+    text-transform: none;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.banner img{
+    opacity: 0.85;
+}
