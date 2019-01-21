@@ -98,6 +98,6 @@ header {
     opacity: 0.85;
 }
 
-.active{
-    border-color: rgb(5, 0, 0);
+footer{
+    background: #252525;
 }
