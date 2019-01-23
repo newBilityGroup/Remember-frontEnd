@@ -77,6 +77,15 @@
  	-ms-transform: translate(-50%, -50%);
  	transform: translate(-50%, -50%);
  }
+.page{
+	padding-bottom: 100px;
+}
+footer {
+ 	position: absolute;
+ 	bottom: 0;
+ 	width: 100%;
+ 	height: 100px;
+ }
 
  /* ---------- LOGIN ---------- */
  #backIcon {
@@ -148,13 +157,19 @@
  #login>p span {
  	padding-left: 5px;
  }
- .center{
-	text-align: center;
-	margin: 0 auto;
-}
-.red{
-	color:red;
-}
+
+ .center {
+ 	text-align: center;
+ }
+
+ .red {
+ 	color: red;
+ }
+
+ .float-right {
+ 	float: right;
+ }
+
 
  /*Lets start with the cloud formation rather*/
 
@@ -176,7 +191,7 @@
  /*Time to finalise the cloud shape*/
  .cloud {
  	width: 200px;
- 	height: 60px;
+ 	height: 71px;
  	background: #fff;
 
  	border-radius: 200px;
