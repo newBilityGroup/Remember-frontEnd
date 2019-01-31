@@ -55,10 +55,8 @@
   <script src="../assets/js/mock-min.js"></script>
   <script src="../assets/js/jquery.min.js"></script>
   <script>
-    var data = Mock.mock("/login", "post", {
-      'list|1': [{
+    var mockData = Mock.mock("/login", "post", {
         'status': 200
-      }]
     })
     $("#loginForm").submit(function () {
       var userInfo = {
@@ -73,13 +71,13 @@
         alert('密码不能为空');
         return false;
       }
-      axios.post('/login', JSON.stringify(this.userInfo))
+      axios.post('/login')
         .then(res => {
-          console.log(res);
-          if (res.status == 200) {
+          console.log(res.data.status);
+          if (res.data.status == 200) {
             alert("登录成功");
             window.location.href = "index.html";
-          } else {
+          }else{
             alert("账号或密码错误");
           }
         })
