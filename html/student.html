@@ -10,6 +10,7 @@
     <link rel="shortcut icon" href="../assets/images/favicon.ico">
     <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="../assets/js/uikit.min.js"></script>
+    <script type="text/javascript" src="../assets/js/echarts.js"></script>
     <title>学生主页</title>
 </head>
 
@@ -98,10 +99,10 @@
             <div class="uk-grid">
                 <div class="uk-width-medium-1-6">
                     <!-- 包含拨动元素的导航菜单 -->
-                    <ul class="uk-nav uk-nav-side" data-uk-switcher="{connect:'#my-id' , animation: 'slide-vertical'}">
+                    <ul class="uk-nav uk-nav-side" data-uk-switcher="{connect:'#my-id' , animation: 'fade'}">
                         <li><a href="">个人资料</a></li>
                         <li><a href="">我的技能树</a></li>
-                        <li><a href="">其他</a></li>
+                        <li><a href="">修改资料</a></li>
                     </ul>
                 </div>
                 <div class="uk-width-medium-5-6">
@@ -109,16 +110,10 @@
                     <ul id="my-id" class="uk-switcher">
                         <!-- 个人资料 start -->
                         <li>
-                            <div class="uk-grid uk-margin-large-left" style="width:600px;">
-                                <div class="uk-width-medium-2-5">
-                                    <figure class="uk-overlay uk-overlay-hover">
-                                        <img class="uk-border-circle" width="120" height="120" src="../assets/images/portrait01.jpg"
-                                            alt="">
-                                        <figcaption class="uk-overlay-panel uk-overlay-background uk-flex uk-flex-center uk-flex-middle uk-text-center uk-border-circle">
-                                            <a href="" class="uk-icon-medium uk-icon-picture-o"></a>
-                                            <p>修改我的头像</p>
-                                        </figcaption>
-                                    </figure>
+                            <div class="uk-grid uk-margin-large-left" style="width:900px;">
+                                <div class="uk-width-medium-1-5">
+                                    <img class="uk-border-circle" width="120" height="120" src="../assets/images/portrait01.jpg"
+                                        alt="">
                                 </div>
                                 <div class="uk-width-medium-3-5">
                                     <h2 class="uk-margin-large-bottom">尼古拉斯</h2>
@@ -188,11 +183,25 @@
                                         <span class="uk-margin-large-left uk-float-right">阿里创业园</span>
                                     </h4>
                                 </div>
+                                <div class="uk-width-medium-1-5">
+                                    <div id="main" style="width: 500px;height:300px;"></div>
+                                </div>
                             </div>
                         </li>
                         <!-- 个人资料 end -->
                         <li>XXX</li>
-                        <li>VVV</li>
+                        <li>
+                            <div class="uk-width-medium-1-5">
+                                <figure class="uk-overlay uk-overlay-hover">
+                                    <img class="uk-border-circle" width="120" height="120" src="../assets/images/portrait01.jpg"
+                                        alt="">
+                                    <figcaption class="uk-overlay-panel uk-overlay-background uk-flex uk-flex-center uk-flex-middle uk-text-center uk-border-circle">
+                                        <a href="" class="uk-icon-medium uk-icon-picture-o"></a>
+                                        <p>修改我的头像</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -215,6 +224,68 @@
         </footer>
         <!-- footer end -->
     </div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: '能力雷达图'
+            },
+            tooltip: {},
+            // legend: {
+            //     data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+            // },
+            radar: {
+                // shape: 'circle',
+                name: {
+                    textStyle: {
+                        color: '#fff',
+                        backgroundColor: '#999',
+                        borderRadius: 3,
+                        padding: [1, 3]
+                    }
+                },
+                indicator: [{
+                        name: '创造力',
+                        max: 10
+                    },
+                    {
+                        name: '执行力',
+                        max: 10
+                    },
+                    {
+                        name: '编程能力',
+                        max: 10
+                    },
+                    {
+                        name: '逻辑能力',
+                        max: 10
+                    },
+                    {
+                        name: '社交能力',
+                        max: 10
+                    },
+                    {
+                        name: '想象力',
+                        max: 10
+                    }
+                ]
+            },
+            series: [{
+                name: '能力',
+                type: 'radar',
+                data: [{
+                    value: [8, 7, 4, 7, 5, 10],
+                    name: '我的能力'
+                }]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
 </body>
 
 </html>
