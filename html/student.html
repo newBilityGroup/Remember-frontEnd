@@ -102,7 +102,6 @@
                     <ul class="uk-nav uk-nav-side" data-uk-switcher="{connect:'#my-id' , animation: 'fade'}">
                         <li><a href="">个人资料</a></li>
                         <li><a href="">我的技能树</a></li>
-                        <li><a href="">修改资料</a></li>
                     </ul>
                 </div>
                 <div class="uk-width-medium-5-6">
@@ -114,6 +113,7 @@
                                 <div class="uk-width-medium-1-5">
                                     <img class="uk-border-circle" width="120" height="120" src="../assets/images/portrait01.jpg"
                                         alt="">
+                                    <a class="uk-button uk-margin-top uk-margin-left" href="">修改个人资料</a>
                                 </div>
                                 <div class="uk-width-medium-3-5">
                                     <h2 class="uk-margin-large-bottom">尼古拉斯</h2>
@@ -189,18 +189,10 @@
                             </div>
                         </li>
                         <!-- 个人资料 end -->
-                        <li>XXX</li>
                         <li>
-                            <div class="uk-width-medium-1-5">
-                                <figure class="uk-overlay uk-overlay-hover">
-                                    <img class="uk-border-circle" width="120" height="120" src="../assets/images/portrait01.jpg"
-                                        alt="">
-                                    <figcaption class="uk-overlay-panel uk-overlay-background uk-flex uk-flex-center uk-flex-middle uk-text-center uk-border-circle">
-                                        <a href="" class="uk-icon-medium uk-icon-picture-o"></a>
-                                        <p>修改我的头像</p>
-                                    </figcaption>
-                                </figure>
-                            </div>
+                            <a class="uk-button" href="">编辑技能树</a>
+                            <div id="tree" style="width: 1000px;height:700px;"></div>
+
                         </li>
                     </ul>
                 </div>
@@ -234,9 +226,6 @@
                 text: '能力雷达图'
             },
             tooltip: {},
-            // legend: {
-            //     data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
-            // },
             radar: {
                 // shape: 'circle',
                 name: {
@@ -285,6 +274,87 @@
 
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
+    </script>
+    <script>
+        var treeChart = echarts.init(document.getElementById('tree'));
+        treeChart.showLoading();
+
+        var data = {
+            "children": [{
+                    "children": [{
+                        "children": [{
+                            "children": [],
+                            "name": "Spring"
+                        }, {
+                            "children": [],
+                            "name": "SpringMVC"
+                        }, {
+                            "children": [],
+                            "name": "MyBatis"
+                        }],
+                        "name": "SSM"
+                    }],
+                    "name": "后端"
+                },
+                {
+                    "children": [{
+                            "children": [],
+                            "name": "Vue"
+                        }, {
+                            "children": [],
+                            "name": "React"
+                        },
+                        {
+                            "children": [],
+                            "name": "Angular"
+                        }
+                    ],
+                    "name": "前端"
+                }
+            ],
+            "name": "技能树"
+        };
+        treeChart.hideLoading();
+
+        echarts.util.each(data.children, function (datum, index) {
+            index % 2 === 0 && (datum.collapsed = true);
+        });
+
+        treeChart.setOption(option = {
+            tooltip: {
+                trigger: 'item',
+                triggerOn: 'mousemove'
+            },
+            series: [{
+                type: 'tree',
+                data: [data],
+                top: '1%',
+                left: '7%',
+                bottom: '1%',
+                right: '20%',
+                symbolSize: 7,
+                label: {
+                    normal: {
+                        position: 'left',
+                        verticalAlign: 'middle',
+                        align: 'right',
+                        fontSize: 15
+                    }
+                },
+                leaves: {
+                    label: {
+                        normal: {
+                            position: 'right',
+                            verticalAlign: 'middle',
+                            align: 'left'
+                        }
+                    }
+                },
+                expandAndCollapse: true,
+                animationDuration: 550,
+                animationDurationUpdate: 750
+            }]
+        });
     </script>
 </body>
 
